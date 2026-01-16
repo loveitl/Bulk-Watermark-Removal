@@ -1,127 +1,88 @@
-# Bulk Watermark Removal
+# Changelog
 
-## 🚀 Version 2.5.1 – UI Stability & Workflow Update
+All notable changes to this project will be documented in this file.
 
-This release focuses on **UI stability**, **professional layout behavior**, and **workflow completeness**. It resolves long‑standing preview/layout issues and finalizes the end‑to‑end watermark‑removal experience.
-
----
-
-## ✨ Key Highlights
-
-### 🪟 Window & Popup Behavior
-
-* Main application **always opens centered on screen**
-* All popups (Freehand Editor, Progress, Summary) **open centered relative to the main window**
-* No random placement or flickering
+The format is based on **Keep a Changelog** and this project follows **Semantic Versioning**.
 
 ---
 
-### 🖼 Image Table Improvements
+## [2.5.1] - 2026-01-16
 
-* Vertical **and horizontal scrollbars** for large file lists
-* Handles long filenames gracefully
-* **Auto‑selects first image** when images are added
-* Preview is shown **automatically** on first load
-* **Clear Table** button resets:
+### Fixed
 
-  * File list
-  * Preview
-  * Freehand masks
+* Fixed UI layout issue where the preview image could hide or overlap the START button
+* Prevented preview widget from expanding beyond its allocated area
+* Ensured action buttons are always visible regardless of image size
 
----
+### Improved
 
-### 👁 Preview Panel (Major UX Fix)
-
-* Preview area now has a **fixed height**
-* Large images no longer push UI controls off‑screen
-* **START button is always visible**
-* Live overlay preview includes:
-
-  * Preset watermark region (red transparent box)
-  * Freehand markup overlay
-* Preview updates instantly when:
-
-  * Preset position changes
-  * Freehand mask is added or cleared
+* Stabilized right-side panel layout with a fixed-height preview container
+* Improved overall UI consistency when loading large images
 
 ---
 
-### ✍ Freehand Markup Editor
+## [2.5.0] - 2026-01-15
 
-* Adjustable **brush size slider** (small → large)
-* Live drawing with visual feedback
-* **Clear Drawing** button inside editor
-* Empty masks are ignored automatically
-* Editor opens centered over the main UI
+### Added
 
----
+* Progress popup with progress bar during watermark removal
+* Live ETA display while processing images
+* Summary popup after processing completion
+* Horizontal scrollbar for image table to support long filenames
+* Automatic centering of main window and all popups
 
-### 📍 Preset Watermark Positions
+### Improved
 
-All preset positions are fully functional:
-
-* Top Left
-* Top Right
-* Bottom Left
-* Bottom Right
-
-**Logic improvement:**
-
-* Presets apply automatically when no effective freehand mask exists
-* Freehand masks override presets only when they contain actual data
+* Preview panel now shows live overlay for preset watermark regions
+* Preview panel displays freehand mask overlay before processing
+* Automatically selects and previews the first image when images are added
+* Added Clear Table button to reset image list, preview, and masks
 
 ---
 
-### ⏳ Processing Experience
+## [2.3.0] - 2026-01-14
 
-* Non‑blocking background processing
-* **Progress popup** with:
+### Added
 
-  * Progress bar
-  * Live ETA calculation
-* **Summary popup** after completion showing:
+* Freehand watermark markup editor
+* Adjustable brush size slider for freehand drawing
+* Clear freehand markup option inside editor
+* Live visual overlay of freehand mask on preview
 
-  * Total images
-  * Successfully processed images
+### Fixed
 
----
-
-## 🛠 Technical Improvements
-
-* Stable Tkinter layout (no widget overlap)
-* Fixed geometry propagation issues
-* Safer mask handling (ignores empty masks)
-* Explicit watermark position mapping
-* Cleaner separation of preview, controls, and actions
+* Preset watermark removal not triggering when empty freehand masks existed
+* Improved handling of empty or unused freehand masks
 
 ---
 
-## ✅ Who Should Update
+## [2.2.0] - 2026-01-13
 
-* Anyone experiencing hidden buttons or broken layout
-* Users working with large images or long file lists
-* Users relying on preset watermark positions
-* Anyone wanting a polished, professional UI experience
+### Fixed
 
----
+* Incorrect preset watermark positioning logic
+* Top/Bottom and Left/Right presets not applying correctly in some cases
 
-## 📌 Notes
+### Improved
 
-* This version is intended as a **stable base release**
-* Future updates can safely build on this without re‑introducing layout bugs
+* Introduced explicit coordinate mapping for all preset watermark positions
+* Improved reliability of preset fallback behavior
 
 ---
 
-## 🔮 Planned Enhancements (Next Versions)
+## [2.0.0] - 2026-01-10
 
-* Cancel button during processing
-* Per‑image presets and masks
-* Undo support for freehand strokes
-* Zoomable preview / editor
-* Save & load watermark projects
-* Standalone EXE packaging
+### Added
+
+* Bulk watermark removal using OpenCV inpainting
+* Drag-and-drop support for adding images
+* Preset watermark region removal
+* Image preview panel
 
 ---
 
-**Thank you for using Bulk Watermark Removal!**
-If you encounter issues or have feature requests, please open an issue or discussion on GitHub.
+## [1.0.0] - 2026-01-01
+
+### Added
+
+* Initial release with basic watermark removal functionality
